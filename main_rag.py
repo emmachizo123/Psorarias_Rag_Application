@@ -30,11 +30,6 @@ if prompt:
     with st.spinner("Generating Response"):
         generated_response =doLookup_with_LLM_Agent(name=prompt)
 
-        #formatted_response =(
-            #f"{generated_response['result']} "
-        #)
-
-
         st.session_state["user_prompt_history"].append(prompt)
         #st.session_state["chat_answers_history"].append(formatted_response)
         st.session_state["chat_answers_history"].append(dict(generated_response)["content"])

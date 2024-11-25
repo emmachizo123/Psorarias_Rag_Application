@@ -20,6 +20,7 @@ from agent.disease_lookup_agent import lookup as Disease_lookup_agent
 # Read the data context into a variable
 
 def doLookup_with_LLM_Agent(name:str)->str:
+
     #calling the psoriasis_look_up_agent
     #psoriaris_page_name = Psoriaris_lookup_agent(name=name)
     disease_page_name = Psoriaris_lookup_agent(name=name)
@@ -44,7 +45,7 @@ def doLookup_with_LLM_Agent(name:str)->str:
     # chat models are wrappers around the langauge models
     # temperature decides how creative the language model will be
 
-    print("key is " + str(os.environ.get("OPENAI_API_KEY")))
+
 
     llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", api_key=f'{os.environ.get("OPENAI_API_KEY")}')
 
